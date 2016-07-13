@@ -1,11 +1,15 @@
-<html ng-app="TamHuynhWebsite" ng-controller="MainController as mc">
+<html ng-app="TamHuynhWebsite" ng-controller="MainController as mc" ng-cloak>
   <head>
     <title ng-bind="'TamHuynh - ' + title"></title>
 
     <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Materifont-awesome.min.cssal+Icons"> -->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0"/>
@@ -13,7 +17,8 @@
 
   <body layout="column">
     <md-toolbar layout="row" layout-align-gt-sm="center">
-      <md-button class="material-icons" ng-click="toggleSideNav()" hide-gt-sm>menu</md-button>
+      <md-button class="fa fa-bars fa-2x" ng-click="toggleSideNav()" hide-gt-sm md-no-ink aria-label="menu">
+      </md-button>
       <h3>TamHuynh</h3>
     </md-toolbar>
 
@@ -21,40 +26,31 @@
       <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-4dp" md-component-id="left-sidenav">
           <md-list ng-click="toggleSideNav()">
             <md-list-item>
-              <md-button ng-click="changeView('profile')">Profile</md-button>
+              <md-button ng-class="{'md-primary':title == 'Profile'}" ng-click="changeView('profile')">Profile</md-button>
             </md-list-item>
 
             <md-list-item>
-              <md-button ng-click="changeView('education')">Education</md-button>
+              <md-button ng-class="{'md-primary':title == 'Education'}" ng-click="changeView('education')">Education</md-button>
             </md-list-item>
 
+            <md-list-item>
+              <md-button ng-class="{'md-primary':title == 'Experience'}" ng-click="changeView('experience')">Experience</md-button>
+            </md-list-item>
+
+            <md-divider></md-divider>
+
+            <md-list-item>
+              <md-button ng-click="toggleContact()">Contact</md-button>
+            </md-list-item>
           </md-list>
       </md-sidenav>
 
-      <md-content id="content" flex>
+      <md-content id="content" flex layout-padding>
         <div class="container">
           <ng-view></ng-view>
         </div>
       </md-content>
     </div>
-    
-
-    <!-- 
-    <div class="container">
-    </div>
-
-    <ul id="nav-mobile" class="side-nav fixed">
-      <li class="logo">
-        <a id="logo-container" href="http://tamhuynh-it.com/" class="brand-logo">
-          <img id="front-page-logo" src="images/avatar.png" alt="Your browser does not support SVG" />
-        </a>
-      </li>
-
-      <li class="bold" ng-class="{'active': title == 'Profile'}"><a href="#/profile" class="waves-effect waves-teal">Profile</a></li>
-      <li class="bold" ng-class="{'active': title == 'Education'}"><a href="#/education" class="waves-effect waves-teal">Education</a></li>
-      <li class="bold" ng-class="{'active': title == 'Experience'}"><a href="#/experience" class="waves-effect waves-teal">Experience</a></li>
-      <li class="bold" ng-class="{'active': title == 'Contact'}"><a href="#/contact" class="waves-effect waves-teal">Contact</a></li>
-    </ul> -->
 
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
