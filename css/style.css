@@ -15,16 +15,11 @@ md-list {
   padding: 0;
 }
 
-md-list-item {
+.sidenav-item {
   height: 60px;
-  border-radius: 0 !important;
 }
 
-md-list-item .active {
-  background-color: red;
-}
-
-md-list-item > button {
+.sidenav-item > button {
   height: 100%;
   width: 100%;
   padding: 0 10px !important;
@@ -37,12 +32,30 @@ md-list-item > button {
 }
 
 .contact-container {
-  width: 400px;
-  min-height: 100px;
+  min-width: 300px;
+  min-height: 240px;
+  padding: 10px;
 }
 
-.contact-container > button {
+.mobile-contact-container {
+  margin-bottom: 24px;
+}
+
+.mobile-contact-container span {
+  margin: 10px;
+}
+
+.contact-item {
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 36px;
   font-size: 10pt;
   width: 100%;
-  height: 100%;
+  align-items: flex-start;
+  text-transform: none;
+}
+
+.contact-icon {
+  margin-top: 8px;
+  margin-right: 10px;
 }

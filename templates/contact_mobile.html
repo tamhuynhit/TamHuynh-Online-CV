@@ -1,0 +1,14 @@
+<div>
+  <h3>Contact me:</h3>
+
+    <div ng-repeat="group in contacts" layout="row">
+        <md-card flex class="mobile-contact-container">
+          <span>{{group.title}}</span>
+
+            <md-button ng-click="performContact(item)" class="contact-item" ng-repeat="item in group.content" aria-hidden="true" layout="column">
+              <span flex><i style="color: {{item.color}};" class="fa fa-{{item.icon}} fa-2x contact-icon"></i>{{item.content}}</span>
+            </md-button>  
+        </md-card>
+    </div>
+  </md-list>
+</div>

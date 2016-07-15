@@ -1,17 +1,18 @@
-<md-bottom-sheet class="md-grid" layout="column">
+<md-bottom-sheet layout="column">
   <div class="container">
-    <md-subheader layout="row">
+    <md-subheader>
       Contact me:
     </md-sub-header>
 
-    <md-list layout="row" layout-xs="column" flex layout-align="center center">
-      <md-list-item class="contact-container" ng-repeat="group in contacts" flex layout="column">
-        <span>{{group.title}}</span>
-        <div>
-          <md-button ng-click="performContact(item.name)" ng-repeat="item in group.content" aria-hidden="true" layout="column">
-            <span><i class="fa fa-{{item.icon}} fa-2x"></i>{{item.content}}</span>
-          </md-button>  
-        </div>
+    <md-list layout="row" flex layout-align="center center">
+      <md-list-item ng-repeat="group in contacts" layout="column">
+          <md-card class="contact-container">
+            <span>{{group.title}}</span>
+
+            <md-button ng-click="performContact(item)" class="contact-item" ng-repeat="item in group.content" aria-hidden="true" layout="column">
+              <span flex><i style="color: {{item.color}};" class="fa fa-{{item.icon}} fa-2x contact-icon"></i>{{item.content}}</span>
+            </md-button>  
+          </md-card>
 
       </md-list-item>
     </md-list>
