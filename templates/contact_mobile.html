@@ -2,7 +2,7 @@
   <h3>Contact me:</h3>
   
     <div ng-repeat="group in contacts" layout="row">
-        <md-card flex class="mobile-contact-container">
+        <md-card flex class="content-card">
           <span>{{group.title}}</span>
 
             <md-button ng-click="performContact(item)" class="contact-item" ng-repeat="item in group.content" aria-hidden="true" layout="column">

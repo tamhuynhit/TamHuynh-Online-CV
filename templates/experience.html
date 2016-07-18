@@ -1,7 +1,14 @@
 <div>
-  <h2 class="md-primary">Experience</h2>
+  <h3 class="md-primary">Experience</h3>
 
-  <div ng-repeat="exp in expList">
-    <uib-progressbar title="{{exp.name}}" animate="true" class="exp-summary-progress" value="exp.animateValue">{{exp.animateValue}}</uib-progressbar>
-  </div>
+  <md-card class="content-card" ng-repeat="skillset in skillList">
+    <span>{{skillset.title}}</span>
+
+    <div ng-repeat="skill in skillset.content" class="skillset-container">
+      <span>{{skill.name}}</span>
+      <div class="skill-progress-container" md-whiteframe="3">
+        <uib-progressbar title="{{skill.name}}" animate="true" class="" value="skill.currentValue">{{skill.currentValue}} %</uib-progressbar>
+      </div>
+    </div>
+  </md-card>
 </div>

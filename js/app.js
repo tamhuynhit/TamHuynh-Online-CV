@@ -90,17 +90,42 @@ module.controller('EducationController', function($scope) {
   $scope.message = 'Education';
 });
 
-module.controller('ExperienceController', function($scope, $interval, $timeout) {
+module.controller('ExperienceController', function($scope, $timeout) {
   $scope.message = 'Experience';
   
-  $scope.expList = [
-    { name: 'Android Development', max: 80, animateValue: 0 },
-    { name: 'Python/Django', max: 20, animateValue: 0 }
+  $scope.skillList = [
+    { title:'Mobile Development',
+      content: [
+        { name: 'Android', maxValue: 50, currentValue: 0 },
+        { name: 'UWP/Windows 10', maxValue: 60, currentValue: 0 }
+      ]
+    },
+    { title:'Web Framework',
+      content: [
+        { name: 'Django', maxValue: 50, currentValue: 0 },
+        { name: 'ASP.NET MVC', maxValue: 40, currentValue: 0 }
+      ]
+    },
+    { title:'Frontend Framework',
+      content: [
+        { name: 'AngularJS', maxValue: 40, currentValue: 0 },
+        { name: 'JQuery', maxValue: 30, currentValue: 0 }
+      ]
+    },
+    { title:'Programming Language',
+      content: [
+        { name: 'Python', maxValue: 60, currentValue: 0 },
+        { name: 'C#', maxValue: 70, currentValue: 0 },
+        { name: 'Java', maxValue: 50, currentValue: 0 }
+      ]
+    },
   ];
 
   $timeout(function() {
-    $scope.expList.forEach(function(item) {
-      item.animateValue = item.max;
+    $scope.skillList.forEach(function(skillset) {
+      skillset.content.forEach(function(skill) {
+        skill.currentValue = skill.maxValue;
+      });
     });
   }, 50);
 });

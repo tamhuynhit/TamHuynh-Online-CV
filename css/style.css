@@ -4,11 +4,13 @@ html, body {
   height: 100%;
 }
 
-md-toolbar h3 {
-  margin: 0;
-  padding-top: 20px;
+md-toolbar h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
   font-weight: 500;
-  min-height: 76px;
+}
+md-toolbar > button {
+  margin-top: 8px !important;
 }
 
 md-list {
@@ -18,7 +20,6 @@ md-list {
 .sidenav-item {
   height: 60px;
 }
-
 .sidenav-item > button {
   height: 100%;
   width: 100%;
@@ -27,24 +28,11 @@ md-list {
   text-align: left !important;
 }
 
-.circle {
-  border-radius: 50%;
-}
-
 .contact-container {
   min-width: 300px;
   min-height: 240px;
   padding: 10px;
 }
-
-.mobile-contact-container {
-  margin-bottom: 24px;
-}
-
-.mobile-contact-container span {
-  margin: 10px;
-}
-
 .contact-item {
   margin: 0;
   padding-top: 5px;
@@ -54,19 +42,32 @@ md-list {
   align-items: flex-start;
   text-transform: none;
 }
-
 .contact-icon {
   margin-top: 8px;
   margin-right: 10px;
 }
 
-.exp-summary-progress {
-  height: 40px;
-  background-color: gray;
+.content-card {
+  padding: 10px;
+  margin-bottom: 24px;
+}
+.content-card span {
+  margin: 10px;
 }
 
-.exp-summary-progress .progress-bar {
+.skillset-container {
+  margin: 10px;
+}
+.skillset-container > span {
+  font-size: 12pt;
+}
+.skill-progress-container .progress {
+  height: 40px;
+  background-color: #E0E0E0;
+  margin: 0;
+}
+.skill-progress-container .progress-bar {
   background-color: green;  
-  font-size: 20pt;
+  font-size: 14pt;
   padding-top: 10px;
 }
