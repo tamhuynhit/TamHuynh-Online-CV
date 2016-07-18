@@ -48,7 +48,7 @@ md-list {
 .contact-item {
   margin: 0;
   padding-top: 5px;
-  padding-left: 36px;
+  padding-left: 24px;
   font-size: 10pt;
   width: 100%;
   align-items: flex-start;
@@ -58,4 +58,15 @@ md-list {
 .contact-icon {
   margin-top: 8px;
   margin-right: 10px;
+}
+
+.exp-summary-progress {
+  height: 40px;
+  background-color: gray;
+}
+
+.exp-summary-progress .progress-bar {
+  background-color: green;  
+  font-size: 20pt;
+  padding-top: 10px;
 }

@@ -1,5 +1,7 @@
-<div style="height: 800px;">
-  {{ message }}
+<div>
+  <h2 class="md-primary">Experience</h2>
 
-  <!-- <img src="images/avatar.png" class="img-circle" /> -->
+  <div ng-repeat="exp in expList">
+    <uib-progressbar title="{{exp.name}}" animate="true" class="exp-summary-progress" value="exp.animateValue">{{exp.animateValue}}</uib-progressbar>
+  </div>
 </div>

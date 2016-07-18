@@ -1,4 +1,4 @@
-var module = angular.module('TamHuynhWebsite', ['ngAnimate', 'ngRoute', 'ngMaterial'])
+var module = angular.module('TamHuynhWebsite', ['ui.bootstrap', 'ngAnimate', 'ngRoute', 'ngMaterial'])
 
 module.config(function ($routeProvider, $mdThemingProvider) {
   $routeProvider
@@ -32,11 +32,11 @@ module.config(function ($routeProvider, $mdThemingProvider) {
 });
 
 module.run(['$rootScope', function($rootScope) {
-    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        if (current.hasOwnProperty('$$route')) {
-            $rootScope.title = current.$$route.title;
-        }
-    });
+  $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+      if (current.hasOwnProperty('$$route')) {
+          $rootScope.title = current.$$route.title;
+      }
+  });
 }]);
 
 module.factory('mdbottomSheetWrapper', ['$mdBottomSheet', function($mdBottomSheet) {
@@ -90,8 +90,19 @@ module.controller('EducationController', function($scope) {
   $scope.message = 'Education';
 });
 
-module.controller('ExperienceController', function($scope) {
+module.controller('ExperienceController', function($scope, $interval, $timeout) {
   $scope.message = 'Experience';
+  
+  $scope.expList = [
+    { name: 'Android Development', max: 80, animateValue: 0 },
+    { name: 'Python/Django', max: 20, animateValue: 0 }
+  ];
+
+  $timeout(function() {
+    $scope.expList.forEach(function(item) {
+      item.animateValue = item.max;
+    });
+  }, 50);
 });
 
 module.controller('ContactController', function($scope, $location, $window, mdbottomSheetWrapper) {
